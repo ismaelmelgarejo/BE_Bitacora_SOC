@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db222:
+    # Cambiamos 'latest' por la versión específica 16
+    image: postgres:16
+    container_name: chatgpt_DB
+    restart: always
+    environment:
+      POSTGRES_USER: mi_usuario
+      POSTGRES_PASSWORD: mi_password
+      POSTGRES_DB: chatgpt_DB 
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data222
+
+volumes:
+  postgres_data:
